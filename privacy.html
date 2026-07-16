@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Informativa sulla privacy — MySciò</title>
+<meta name="description" content="Informativa sulla privacy di MySciò e dei suoi prodotti: EasyWait, MySciòApp, HACCPPLAY, MyMood." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#0a0e1a;
+    --bg-1:#0f1526;
+    --bg-2:#141b32;
+    --ink-0:#f5f3ee;
+    --ink-1:#c7cbdb;
+    --ink-2:#8890a8;
+    --gold:#e8b84b;
+    --gold-soft:#f3d78a;
+    --line:rgba(232,184,75,0.16);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 600px at 15% -10%, rgba(232,184,75,0.10), transparent 60%),
+      radial-gradient(900px 500px at 90% 0%, rgba(61,139,216,0.08), transparent 55%),
+      linear-gradient(180deg, var(--bg-0), var(--bg-1) 40%, var(--bg-0));
+    color:var(--ink-0);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', 'Inter', sans-serif;
+    margin:0;
+  }
+  a{color:var(--gold-soft); text-decoration:none;}
+  a:hover{ text-decoration:underline; }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  header{ padding:28px 0; }
+  header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+  }
+  .brand .dot{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 14px 2px rgba(232,184,75,0.55);
+  }
+  header nav a{
+    color:var(--ink-2);
+    font-size:0.92rem;
+    font-weight:500;
+    margin-left:28px;
+    transition:color .2s ease;
+  }
+  header nav a:hover{ color:var(--gold-soft); text-decoration:none; }
+
+  main{ padding:36px 0 90px; }
+  .legal{
+    max-width:760px;
+    margin:0 auto;
+  }
+  .legal .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 16px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(232,184,75,0.05);
+    color:var(--gold-soft);
+    font-size:0.8rem;
+    font-weight:500;
+    letter-spacing:0.03em;
+    margin-bottom:20px;
+  }
+  .legal h1{
+    font-size:clamp(2rem, 4.4vw, 2.8rem);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-0.01em;
+  }
+  .legal .updated{
+    margin-top:14px;
+    color:var(--ink-2);
+    font-size:0.88rem;
+  }
+  .legal section{
+    margin-top:44px;
+    padding-top:36px;
+    border-top:1px solid rgba(255,255,255,0.07);
+  }
+  .legal section:first-of-type{
+    border-top:none;
+    margin-top:40px;
+    padding-top:0;
+  }
+  .legal h2{
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--ink-0);
+  }
+  .legal h3{
+    margin-top:22px;
+    font-size:1.02rem;
+    font-weight:600;
+    color:var(--ink-0);
+  }
+  .legal p{
+    margin-top:14px;
+    color:var(--ink-1);
+    font-size:0.98rem;
+    line-height:1.7;
+  }
+  .legal ul{
+    margin:14px 0 0;
+    padding-left:20px;
+    color:var(--ink-1);
+    font-size:0.98rem;
+    line-height:1.7;
+  }
+  .legal li{ margin-top:8px; }
+  .legal li b, .legal p b{ color:var(--ink-0); font-weight:600; }
+  .legal .box{
+    margin-top:16px;
+    padding:18px 20px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .legal .box p{ margin-top:0; }
+  .legal .box p + p{ margin-top:8px; }
+
+  .back{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:8px;
+    color:var(--ink-2);
+    font-size:0.9rem;
+    font-weight:500;
+  }
+  .back:hover{ color:var(--gold-soft); }
+
+  footer{ padding:60px 0 40px; border-top:1px solid rgba(255,255,255,0.06); }
+  .foot-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    color:var(--ink-2);
+    font-size:0.85rem;
+  }
+  .foot-links{ display:flex; gap:22px; flex-wrap:wrap; }
+  .foot-links a{ color:var(--ink-2); transition:color .2s ease; }
+  .foot-links a:hover{ color:var(--gold-soft); text-decoration:none; }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="/"><span class="dot"></span> MySciò</a>
+      <nav>
+        <a href="/termini.html">Termini di servizio</a>
+        <a href="mailto:info@myscio.it">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="legal">
+        <a class="back" href="/">← Torna alla home</a>
+        <div class="eyebrow">🔒 Privacy</div>
+        <h1>Informativa sulla privacy</h1>
+        <p class="updated">Ultimo aggiornamento: 16 luglio 2026</p>
+
+        <section>
+          <h2>1. Titolare del trattamento</h2>
+          <p>Il titolare del trattamento dei dati è <b>Carlo Sciortino</b>, che opera sotto il marchio <b>MySciò</b>, con sede in Italia. Per qualsiasi richiesta relativa al trattamento dei tuoi dati personali puoi scrivere a <a href="mailto:info@myscio.it">info@myscio.it</a>.</p>
+          <p>Questa informativa si applica al sito myscio.it e a tutti i prodotti della famiglia MySciò: <b>EasyWait</b>, <b>MySciòApp</b>, <b>HACCPPLAY</b> e <b>MyMood</b>, ciascuno raggiungibile tramite i propri sottodomini (es. easywait.myscio.it).</p>
+        </section>
+
+        <section>
+          <h2>2. Che dati raccogliamo</h2>
+          <p>I dati raccolti dipendono da come usi i nostri prodotti:</p>
+          <ul>
+            <li><b>Clienti di un ristorante che usa EasyWait</b>: nome, numero di telefono, numero di persone del gruppo, ed eventuali note lasciate al momento di mettersi in lista d'attesa.</li>
+            <li><b>Titolari e staff dei locali che usano i nostri prodotti</b>: nome, indirizzo email, password (salvata in forma cifrata, mai in chiaro), ruolo all'interno del locale.</li>
+            <li><b>Dati tecnici di utilizzo</b>: indirizzo IP, tipo di dispositivo e browser, pagine visitate, raccolti automaticamente dai nostri server per motivi di sicurezza e per il corretto funzionamento del servizio.</li>
+          </ul>
+          <p>Non raccogliamo dati di pagamento direttamente: eventuali transazioni sono gestite da fornitori terzi specializzati (es. Stripe), che trattano quei dati secondo le proprie informative.</p>
+        </section>
+
+        <section>
+          <h2>3. Come e perché usiamo i tuoi dati</h2>
+          <p>Trattiamo i tuoi dati per le seguenti finalità:</p>
+          <ul>
+            <li><b>Erogare il servizio richiesto</b>: es. gestire la tua posizione in lista d'attesa e avvisarti quando un tavolo è pronto (base giuridica: esecuzione di un contratto/servizio richiesto dall'interessato).</li>
+            <li><b>Inviare comunicazioni di servizio via WhatsApp</b>: aggiornamenti sullo stato della tua prenotazione, con il tuo consenso esplicito raccolto al momento dell'iscrizione alla lista (base giuridica: consenso).</li>
+            <li><b>Sicurezza e prevenzione abusi</b>: es. limitare richieste eccessive da uno stesso indirizzo IP (base giuridica: legittimo interesse).</li>
+            <li><b>Adempimenti di legge</b>, quando applicabile.</li>
+          </ul>
+          <p>Non utilizziamo i tuoi dati per finalità di marketing senza un consenso separato e specifico.</p>
+        </section>
+
+        <section>
+          <h2>4. Messaggi WhatsApp</h2>
+          <p>EasyWait usa la <b>WhatsApp Business Platform di Meta</b> per inviare messaggi di servizio (non promozionali) legati esclusivamente alla tua posizione in lista d'attesa: conferma dell'iscrizione, avviso di tavolo disponibile, conferma o scadenza della proposta. Per farlo, il tuo numero di telefono e il contenuto di questi messaggi vengono condivisi con Meta Platforms Inc., che li tratta come fornitore di servizi di messaggistica secondo la <a href="https://www.whatsapp.com/legal/business-data-transfer-policy" target="_blank" rel="noopener">Business Data Transfer Policy di WhatsApp</a>.</p>
+          <p>Puoi in qualsiasi momento richiedere allo staff del locale di essere rimosso dalla lista d'attesa; questo interrompe l'invio di ulteriori messaggi relativi a quella prenotazione.</p>
+        </section>
+
+        <section>
+          <h2>5. Con chi condividiamo i dati</h2>
+          <p>Oltre a Meta (per l'invio dei messaggi WhatsApp, vedi punto 4), i tuoi dati possono essere trattati dai fornitori tecnologici che ci permettono di erogare il servizio, tutti vincolati da accordi di trattamento dati conformi al GDPR:</p>
+          <ul>
+            <li><b>Render.com</b> e <b>Vercel Inc.</b> — hosting delle applicazioni e dei database.</li>
+            <li>Fornitori di infrastruttura database (PostgreSQL / MongoDB gestiti) usati per conservare i dati in modo sicuro.</li>
+          </ul>
+          <p>Non vendiamo né cediamo i tuoi dati a terzi per finalità pubblicitarie.</p>
+        </section>
+
+        <section>
+          <h2>6. Per quanto tempo conserviamo i dati</h2>
+          <p>I dati relativi a una singola prenotazione/lista d'attesa vengono conservati per il tempo necessario a gestire la serata e, successivamente, per un periodo ragionevole a fini di cronologia e assistenza, salvo cancellazione anticipata da parte del titolare del locale o su tua richiesta. I dati degli account staff/titolari vengono conservati finché l'account resta attivo.</p>
+        </section>
+
+        <section>
+          <h2>7. I tuoi diritti</h2>
+          <p>In base al GDPR, hai il diritto di richiedere in qualsiasi momento:</p>
+          <ul>
+            <li>l'<b>accesso</b> ai tuoi dati personali;</li>
+            <li>la <b>rettifica</b> di dati inesatti o incompleti;</li>
+            <li>la <b>cancellazione</b> dei tuoi dati ("diritto all'oblio");</li>
+            <li>la <b>limitazione</b> del trattamento;</li>
+            <li>la <b>portabilità</b> dei dati;</li>
+            <li>l'<b>opposizione</b> al trattamento basato su legittimo interesse.</li>
+          </ul>
+          <p>Per esercitare questi diritti scrivi a <a href="mailto:info@myscio.it">info@myscio.it</a>. Hai inoltre sempre il diritto di proporre reclamo al Garante per la protezione dei dati personali.</p>
+        </section>
+
+        <section>
+          <h2>8. Cookie</h2>
+          <p>Il sito myscio.it non utilizza cookie di profilazione o di terze parti a fini pubblicitari. Alcuni dei nostri prodotti (es. EasyWait) usano un cookie tecnico per ricordare la lingua selezionata, strettamente necessario al funzionamento del servizio e non soggetto a consenso preventivo.</p>
+        </section>
+
+        <section>
+          <h2>9. Modifiche a questa informativa</h2>
+          <p>Potremmo aggiornare periodicamente questa informativa per riflettere cambiamenti nei nostri servizi o negli obblighi di legge. La data di ultimo aggiornamento è indicata in cima alla pagina.</p>
+        </section>
+
+        <section>
+          <h2>10. Contatti</h2>
+          <div class="box">
+            <p>Per qualsiasi domanda su questa informativa o sul trattamento dei tuoi dati:</p>
+            <p><a href="mailto:info@myscio.it">info@myscio.it</a></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-bottom">
+        <div>© <span id="year"></span> MySciò — Tutti i diritti riservati</div>
+        <div class="foot-links">
+          <a href="/">Home</a>
+          <a href="/termini.html">Termini di servizio</a>
+          <a href="https://easywait.myscio.it" target="_blank" rel="noopener">EasyWait</a>
+          <a href="https://my.myscio.it" target="_blank" rel="noopener">MySciòApp</a>
+          <a href="https://haccpplay.myscio.it" target="_blank" rel="noopener">HACCPPLAY</a>
+          <a href="https://mymood.myscio.it" target="_blank" rel="noopener">MyMood</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

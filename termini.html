@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Termini di servizio — MySciò</title>
+<meta name="description" content="Termini di servizio di MySciò e dei suoi prodotti: EasyWait, MySciòApp, HACCPPLAY, MyMood." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#0a0e1a;
+    --bg-1:#0f1526;
+    --bg-2:#141b32;
+    --ink-0:#f5f3ee;
+    --ink-1:#c7cbdb;
+    --ink-2:#8890a8;
+    --gold:#e8b84b;
+    --gold-soft:#f3d78a;
+    --line:rgba(232,184,75,0.16);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 600px at 15% -10%, rgba(232,184,75,0.10), transparent 60%),
+      radial-gradient(900px 500px at 90% 0%, rgba(61,139,216,0.08), transparent 55%),
+      linear-gradient(180deg, var(--bg-0), var(--bg-1) 40%, var(--bg-0));
+    color:var(--ink-0);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', 'Inter', sans-serif;
+    margin:0;
+  }
+  a{color:var(--gold-soft); text-decoration:none;}
+  a:hover{ text-decoration:underline; }
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  header{ padding:28px 0; }
+  header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+  }
+  .brand .dot{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 14px 2px rgba(232,184,75,0.55);
+  }
+  header nav a{
+    color:var(--ink-2);
+    font-size:0.92rem;
+    font-weight:500;
+    margin-left:28px;
+    transition:color .2s ease;
+  }
+  header nav a:hover{ color:var(--gold-soft); text-decoration:none; }
+
+  main{ padding:36px 0 90px; }
+  .legal{
+    max-width:760px;
+    margin:0 auto;
+  }
+  .legal .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 16px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(232,184,75,0.05);
+    color:var(--gold-soft);
+    font-size:0.8rem;
+    font-weight:500;
+    letter-spacing:0.03em;
+    margin-bottom:20px;
+  }
+  .legal h1{
+    font-size:clamp(2rem, 4.4vw, 2.8rem);
+    font-weight:800;
+    line-height:1.1;
+    letter-spacing:-0.01em;
+  }
+  .legal .updated{
+    margin-top:14px;
+    color:var(--ink-2);
+    font-size:0.88rem;
+  }
+  .legal section{
+    margin-top:44px;
+    padding-top:36px;
+    border-top:1px solid rgba(255,255,255,0.07);
+  }
+  .legal section:first-of-type{
+    border-top:none;
+    margin-top:40px;
+    padding-top:0;
+  }
+  .legal h2{
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--ink-0);
+  }
+  .legal h3{
+    margin-top:22px;
+    font-size:1.02rem;
+    font-weight:600;
+    color:var(--ink-0);
+  }
+  .legal p{
+    margin-top:14px;
+    color:var(--ink-1);
+    font-size:0.98rem;
+    line-height:1.7;
+  }
+  .legal ul{
+    margin:14px 0 0;
+    padding-left:20px;
+    color:var(--ink-1);
+    font-size:0.98rem;
+    line-height:1.7;
+  }
+  .legal li{ margin-top:8px; }
+  .legal li b, .legal p b{ color:var(--ink-0); font-weight:600; }
+  .legal .box{
+    margin-top:16px;
+    padding:18px 20px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .legal .box p{ margin-top:0; }
+  .legal .box p + p{ margin-top:8px; }
+
+  .back{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:8px;
+    color:var(--ink-2);
+    font-size:0.9rem;
+    font-weight:500;
+  }
+  .back:hover{ color:var(--gold-soft); }
+
+  footer{ padding:60px 0 40px; border-top:1px solid rgba(255,255,255,0.06); }
+  .foot-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    color:var(--ink-2);
+    font-size:0.85rem;
+  }
+  .foot-links{ display:flex; gap:22px; flex-wrap:wrap; }
+  .foot-links a{ color:var(--ink-2); transition:color .2s ease; }
+  .foot-links a:hover{ color:var(--gold-soft); text-decoration:none; }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <a class="brand" href="/"><span class="dot"></span> MySciò</a>
+      <nav>
+        <a href="/privacy.html">Privacy</a>
+        <a href="mailto:info@myscio.it">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="legal">
+        <a class="back" href="/">← Torna alla home</a>
+        <div class="eyebrow">📄 Termini</div>
+        <h1>Termini di servizio</h1>
+        <p class="updated">Ultimo aggiornamento: 16 luglio 2026</p>
+
+        <section>
+          <h2>1. Accettazione dei termini</h2>
+          <p>Questi Termini di servizio regolano l'utilizzo del sito myscio.it e dei prodotti della famiglia MySciò — <b>EasyWait</b>, <b>MySciòApp</b>, <b>HACCPPLAY</b> e <b>MyMood</b> — offerti da Carlo Sciortino sotto il marchio MySciò ("noi", "MySciò"). Utilizzando uno qualsiasi dei nostri prodotti, in qualità di titolare di un locale, membro dello staff o cliente finale, accetti questi termini.</p>
+        </section>
+
+        <section>
+          <h2>2. Descrizione del servizio</h2>
+          <p>MySciò è un insieme di applicazioni software indipendenti pensate per attività di ristorazione, locali ed eventi:</p>
+          <ul>
+            <li><b>EasyWait</b> — gestione digitale della lista d'attesa, con notifiche automatiche ai clienti via WhatsApp.</li>
+            <li><b>MySciòApp</b> — gestionale menu e ordini per la sala.</li>
+            <li><b>HACCPPLAY</b> — autocontrollo alimentare (HACCP) digitale.</li>
+            <li><b>MyMood</b> — profilo digitale per locali, DJ e artisti live.</li>
+          </ul>
+          <p>Ogni prodotto è accessibile tramite il proprio sottodominio (es. easywait.myscio.it) e può avere condizioni d'uso operative specifiche indicate all'interno dell'app stessa.</p>
+        </section>
+
+        <section>
+          <h2>3. Account e accesso</h2>
+          <p>L'accesso alle funzioni gestionali (dashboard amministrativa) richiede la creazione di un account con email e password. Sei responsabile della riservatezza delle tue credenziali e di tutte le attività svolte attraverso il tuo account. Contattaci immediatamente a <a href="mailto:info@myscio.it">info@myscio.it</a> se sospetti un accesso non autorizzato.</p>
+          <p>Alcuni account (es. account demo usati per presentazioni commerciali) possono avere restrizioni specifiche, come l'impossibilità di modificare email o password, comunicate all'interno del prodotto stesso.</p>
+        </section>
+
+        <section>
+          <h2>4. Uso consentito</h2>
+          <p>Ti impegni a utilizzare i nostri prodotti in modo lecito e conforme a questi termini. In particolare, ti impegni a non:</p>
+          <ul>
+            <li>utilizzare il servizio per inviare comunicazioni non richieste (spam) o contenuti illeciti, offensivi o fuorvianti;</li>
+            <li>tentare di accedere senza autorizzazione a dati o account di altri utenti o locali;</li>
+            <li>interferire con il normale funzionamento del servizio o tentare di aggirarne le misure di sicurezza;</li>
+            <li>utilizzare i dati dei clienti raccolti tramite i nostri prodotti per finalità diverse da quelle per cui sono stati raccolti, in particolare per finalità di marketing non consentite dalla normativa sulla protezione dei dati.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>5. Messaggi WhatsApp e consenso del cliente</h2>
+          <p>Se utilizzi EasyWait per gestire la lista d'attesa del tuo locale, riconosci e accetti che il sistema invia messaggi di servizio automatici ai tuoi clienti tramite la WhatsApp Business Platform di Meta, esclusivamente per informarli sullo stato della loro posizione in lista d'attesa. Sei responsabile di assicurarti che il consenso dei tuoi clienti all'invio di questi messaggi sia raccolto correttamente attraverso il modulo previsto dall'app.</p>
+        </section>
+
+        <section>
+          <h2>6. Disponibilità del servizio</h2>
+          <p>Ci impegniamo a mantenere i nostri prodotti disponibili e funzionanti, ma non possiamo garantire un funzionamento ininterrotto o privo di errori. Il servizio può essere temporaneamente sospeso per manutenzione, aggiornamenti o cause al di fuori del nostro controllo (es. interruzioni dei fornitori di hosting o dei servizi di messaggistica di terze parti come Meta/WhatsApp).</p>
+        </section>
+
+        <section>
+          <h2>7. Limitazione di responsabilità</h2>
+          <p>Nei limiti consentiti dalla legge applicabile, MySciò non è responsabile per danni indiretti, perdita di profitti o di dati derivanti dall'uso o dall'impossibilità di utilizzare i nostri prodotti, incluse eventuali interruzioni nell'invio di messaggi WhatsApp dovute a fattori esterni al nostro controllo (es. limitazioni imposte da Meta, problemi di rete del destinatario).</p>
+          <p>I prodotti sono forniti "così come sono", senza garanzie implicite di idoneità a uno scopo particolare, salvo quanto diversamente concordato per iscritto.</p>
+        </section>
+
+        <section>
+          <h2>8. Modifiche al servizio e ai termini</h2>
+          <p>Potremmo aggiornare questi termini o modificare le funzionalità dei nostri prodotti nel tempo. In caso di modifiche sostanziali, faremo un ragionevole sforzo per informarti. L'uso continuato del servizio dopo una modifica costituisce accettazione dei nuovi termini.</p>
+        </section>
+
+        <section>
+          <h2>9. Legge applicabile</h2>
+          <p>Questi termini sono regolati dalla legge italiana. Per qualsiasi controversia sarà competente il foro del luogo di residenza del titolare, salvo diversa disposizione inderogabile di legge a tutela del consumatore.</p>
+        </section>
+
+        <section>
+          <h2>10. Contatti</h2>
+          <div class="box">
+            <p>Per domande su questi Termini di servizio:</p>
+            <p><a href="mailto:info@myscio.it">info@myscio.it</a></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-bottom">
+        <div>© <span id="year"></span> MySciò — Tutti i diritti riservati</div>
+        <div class="foot-links">
+          <a href="/">Home</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="https://easywait.myscio.it" target="_blank" rel="noopener">EasyWait</a>
+          <a href="https://my.myscio.it" target="_blank" rel="noopener">MySciòApp</a>
+          <a href="https://haccpplay.myscio.it" target="_blank" rel="noopener">HACCPPLAY</a>
+          <a href="https://mymood.myscio.it" target="_blank" rel="noopener">MyMood</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
