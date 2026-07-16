@@ -206,13 +206,37 @@
 
         <section>
           <h2>2. Che dati raccogliamo</h2>
-          <p>I dati raccolti dipendono da come usi i nostri prodotti:</p>
+          <p>I dati raccolti dipendono da quale prodotto usi:</p>
+
+          <h3>EasyWait</h3>
           <ul>
-            <li><b>Clienti di un ristorante che usa EasyWait</b>: nome, numero di telefono, numero di persone del gruppo, ed eventuali note lasciate al momento di mettersi in lista d'attesa.</li>
-            <li><b>Titolari e staff dei locali che usano i nostri prodotti</b>: nome, indirizzo email, password (salvata in forma cifrata, mai in chiaro), ruolo all'interno del locale.</li>
-            <li><b>Dati tecnici di utilizzo</b>: indirizzo IP, tipo di dispositivo e browser, pagine visitate, raccolti automaticamente dai nostri server per motivi di sicurezza e per il corretto funzionamento del servizio.</li>
+            <li><b>Cliente in lista d'attesa</b>: nome, numero di telefono, numero di persone del gruppo, eventuali note lasciate al momento dell'iscrizione.</li>
+            <li><b>Titolare/staff del locale</b>: nome, email, password (cifrata), ruolo.</li>
           </ul>
-          <p>Non raccogliamo dati di pagamento direttamente: eventuali transazioni sono gestite da fornitori terzi specializzati (es. Stripe), che trattano quei dati secondo le proprie informative.</p>
+
+          <h3>MySciòApp</h3>
+          <ul>
+            <li><b>Titolare/staff del locale</b>: nome, email, password (cifrata), ruolo.</li>
+            <li><b>Dati operativi del locale</b>: menu, comande e ordini registrati durante il servizio. Non è richiesto alcun dato personale del cliente finale per usare il menu digitale, salvo che il locale scelga di raccoglierlo autonomamente.</li>
+          </ul>
+
+          <h3>HACCPPLAY</h3>
+          <ul>
+            <li><b>Titolare dell'account</b>: nome, email, password (cifrata), dati di fatturazione gestiti tramite Stripe (vedi punto 5).</li>
+            <li><b>Registri di autocontrollo alimentare</b>: temperature, checklist, ricevimento merci, etichette e non conformità inseriti dal titolare stesso. Sono dati che riguardano l'attività del locale, non categorie particolari di dati personali di terzi.</li>
+          </ul>
+
+          <h3>MyMood</h3>
+          <ul>
+            <li><b>Profilo dell'artista/locale</b>: nome d'arte o ragione sociale, biografia, generi musicali, contatti, date ed eventi pubblicati, immagini caricate.</li>
+            <li><b>Fan che lasciano un contatto</b> tramite il modulo "Lascia il tuo contatto" presente sul profilo: nome, email (opzionale), profilo Instagram (opzionale), numero WhatsApp (opzionale). Questo dato viene raccolto solo con consenso esplicito, spuntato dall'utente al momento dell'invio del modulo, per essere ricontattato riguardo alle prossime serate.</li>
+          </ul>
+
+          <h3>Su tutti i prodotti</h3>
+          <ul>
+            <li><b>Dati tecnici di utilizzo</b>: indirizzo IP, tipo di dispositivo e browser, pagine visitate — raccolti automaticamente dai nostri server per motivi di sicurezza e per il corretto funzionamento del servizio.</li>
+          </ul>
+          <p>Non raccogliamo dati di pagamento direttamente: le transazioni di HACCPPLAY sono gestite da <b>Stripe</b>, che tratta quei dati secondo la propria informativa.</p>
         </section>
 
         <section>
@@ -221,6 +245,7 @@
           <ul>
             <li><b>Erogare il servizio richiesto</b>: es. gestire la tua posizione in lista d'attesa e avvisarti quando un tavolo è pronto (base giuridica: esecuzione di un contratto/servizio richiesto dall'interessato).</li>
             <li><b>Inviare comunicazioni di servizio via WhatsApp</b>: aggiornamenti sullo stato della tua prenotazione, con il tuo consenso esplicito raccolto al momento dell'iscrizione alla lista (base giuridica: consenso).</li>
+            <li><b>Avvisarti di nuove date/eventi su MyMood</b>, se hai lasciato un contatto tramite l'apposito modulo e hai spuntato la casella di consenso (base giuridica: consenso).</li>
             <li><b>Sicurezza e prevenzione abusi</b>: es. limitare richieste eccessive da uno stesso indirizzo IP (base giuridica: legittimo interesse).</li>
             <li><b>Adempimenti di legge</b>, quando applicabile.</li>
           </ul>
@@ -238,8 +263,10 @@
           <p>Oltre a Meta (per l'invio dei messaggi WhatsApp, vedi punto 4), i tuoi dati possono essere trattati dai fornitori tecnologici che ci permettono di erogare il servizio, tutti vincolati da accordi di trattamento dati conformi al GDPR:</p>
           <ul>
             <li><b>Render.com</b> e <b>Vercel Inc.</b> — hosting delle applicazioni e dei database.</li>
+            <li><b>Stripe, Inc.</b> — gestione dei pagamenti per l'abbonamento a HACCPPLAY. Stripe riceve direttamente i dati della carta/metodo di pagamento; noi non li vediamo né li conserviamo.</li>
             <li>Fornitori di infrastruttura database (PostgreSQL / MongoDB gestiti) usati per conservare i dati in modo sicuro.</li>
           </ul>
+          <p><b>Trasferimento dati fuori dall'UE.</b> Il servizio EasyWait è ospitato su server situati negli Stati Uniti (Oregon). Questo comporta un trasferimento dei dati fuori dallo Spazio Economico Europeo, effettuato sulla base delle clausole contrattuali standard adottate dalla Commissione Europea e delle garanzie offerte dal fornitore di hosting. MySciòApp e HACCPPLAY sono invece ospitati su server situati nell'Unione Europea (Francoforte).</p>
           <p>Non vendiamo né cediamo i tuoi dati a terzi per finalità pubblicitarie.</p>
         </section>
 
@@ -265,6 +292,7 @@
         <section>
           <h2>8. Cookie</h2>
           <p>Il sito myscio.it non utilizza cookie di profilazione o di terze parti a fini pubblicitari. Alcuni dei nostri prodotti (es. EasyWait) usano un cookie tecnico per ricordare la lingua selezionata, strettamente necessario al funzionamento del servizio e non soggetto a consenso preventivo.</p>
+          <p>Per la grafica del sito carichiamo i caratteri tipografici da Google Fonts: il tuo browser effettua quindi una richiesta ai server di Google, che riceve il tuo indirizzo IP secondo la propria informativa privacy. Non viene impostato alcun cookie di tracciamento da questo servizio.</p>
         </section>
 
         <section>
