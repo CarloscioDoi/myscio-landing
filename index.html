@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MySciò — Prodotti digitali per la ristorazione e oltre</title>
+<meta name="description" content="MySciò è la casa di EasyWait, MySciòApp, HACCPPLAY e MyMood: prodotti digitali pensati per semplificare la vita di ristoranti, locali ed eventi." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-0:#0a0e1a;
+    --bg-1:#0f1526;
+    --bg-2:#141b32;
+    --ink-0:#f5f3ee;
+    --ink-1:#c7cbdb;
+    --ink-2:#8890a8;
+    --gold:#e8b84b;
+    --gold-soft:#f3d78a;
+    --line:rgba(232,184,75,0.16);
+
+    --easywait:#ff6b4a;
+    --myscioapp:#3d8bd8;
+    --haccpplay:#c9a13b;
+    --mymood:#d9a441;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(1100px 600px at 15% -10%, rgba(232,184,75,0.10), transparent 60%),
+      radial-gradient(900px 500px at 90% 0%, rgba(61,139,216,0.08), transparent 55%),
+      linear-gradient(180deg, var(--bg-0), var(--bg-1) 40%, var(--bg-0));
+    background-attachment:fixed;
+    color:var(--ink-0);
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Poppins', 'Inter', sans-serif;
+    margin:0;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* Header */
+  header{
+    padding:28px 0;
+  }
+  header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Poppins', sans-serif;
+    font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+  }
+  .brand .dot{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--gold);
+    box-shadow:0 0 14px 2px rgba(232,184,75,0.55);
+  }
+  header nav a{
+    color:var(--ink-2);
+    font-size:0.92rem;
+    font-weight:500;
+    margin-left:28px;
+    transition:color .2s ease;
+  }
+  header nav a:hover{ color:var(--gold-soft); }
+
+  /* Hero */
+  .hero{
+    padding:96px 0 100px;
+    text-align:center;
+    position:relative;
+  }
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:7px 16px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:rgba(232,184,75,0.05);
+    color:var(--gold-soft);
+    font-size:0.8rem;
+    font-weight:500;
+    letter-spacing:0.03em;
+    margin-bottom:28px;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    font-weight:800;
+    line-height:1.05;
+    letter-spacing:-0.01em;
+    background:linear-gradient(180deg, var(--ink-0) 30%, var(--ink-1));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero h1 .accent{
+    background:linear-gradient(120deg, var(--gold-soft), var(--gold) 60%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero p{
+    max-width:560px;
+    margin:26px auto 0;
+    color:var(--ink-1);
+    font-size:1.13rem;
+    line-height:1.65;
+  }
+  .hero .cta-row{
+    margin-top:40px;
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:13px 26px;
+    border-radius:12px;
+    font-weight:600;
+    font-size:0.95rem;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--gold-soft), var(--gold));
+    color:#241a04;
+    box-shadow:0 8px 24px -8px rgba(232,184,75,0.55);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 30px -8px rgba(232,184,75,0.65); }
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.14);
+    color:var(--ink-1);
+    background:rgba(255,255,255,0.02);
+  }
+  .btn-ghost:hover{ border-color:rgba(255,255,255,0.3); color:var(--ink-0); }
+
+  /* Products */
+  .section-head{
+    text-align:center;
+    margin-bottom:52px;
+  }
+  .section-head .kicker{
+    color:var(--gold-soft);
+    font-size:0.82rem;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+  }
+  .section-head h2{
+    margin-top:12px;
+    font-size:clamp(1.7rem, 3.4vw, 2.4rem);
+    font-weight:700;
+    color:var(--ink-0);
+  }
+  .section-head p{
+    margin-top:14px;
+    color:var(--ink-2);
+    font-size:1rem;
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.6;
+  }
+
+  .products{
+    padding:20px 0 60px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:22px;
+  }
+  @media (max-width:760px){
+    .grid{ grid-template-columns:1fr; }
+  }
+
+  .card{
+    --accent: var(--gold);
+    position:relative;
+    padding:32px 30px 30px;
+    border-radius:20px;
+    background:linear-gradient(165deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+    border:1px solid rgba(255,255,255,0.07);
+    overflow:hidden;
+    transition:transform .25s ease, border-color .25s ease, background .25s ease;
+  }
+  .card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(420px 180px at 0% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%);
+    opacity:0.7;
+    pointer-events:none;
+  }
+  .card:hover{
+    transform:translateY(-5px);
+    border-color:color-mix(in srgb, var(--accent) 45%, rgba(255,255,255,0.1));
+  }
+  .card .icon{
+    width:52px; height:52px;
+    border-radius:14px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.5rem;
+    background:color-mix(in srgb, var(--accent) 18%, transparent);
+    border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    margin-bottom:20px;
+    position:relative;
+  }
+  .card h3{
+    font-size:1.32rem;
+    font-weight:700;
+    color:var(--ink-0);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    position:relative;
+  }
+  .card .tag{
+    font-size:0.68rem;
+    font-weight:600;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:color-mix(in srgb, var(--accent) 75%, white 10%);
+    background:color-mix(in srgb, var(--accent) 16%, transparent);
+    border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    padding:3px 9px;
+    border-radius:999px;
+  }
+  .card p.desc{
+    margin-top:12px;
+    color:var(--ink-1);
+    font-size:0.95rem;
+    line-height:1.6;
+    position:relative;
+    min-height:66px;
+  }
+  .card .go{
+    margin-top:20px;
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    font-weight:600;
+    font-size:0.9rem;
+    color:color-mix(in srgb, var(--accent) 80%, white 15%);
+    position:relative;
+  }
+  .card .go .arrow{ transition:transform .2s ease; }
+  .card:hover .go .arrow{ transform:translateX(4px); }
+
+  .card.easywait{ --accent: var(--easywait); }
+  .card.myscioapp{ --accent: var(--myscioapp); }
+  .card.haccpplay{ --accent: var(--haccpplay); }
+  .card.mymood{ --accent: var(--mymood); }
+
+  /* About strip */
+  .strip{
+    padding:70px 0;
+    border-top:1px solid rgba(255,255,255,0.06);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    background:rgba(255,255,255,0.015);
+  }
+  .strip .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    flex-wrap:wrap;
+  }
+  .strip .copy{ max-width:520px; }
+  .strip .copy .kicker{
+    color:var(--gold-soft);
+    font-size:0.8rem;
+    font-weight:600;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+  }
+  .strip .copy h3{
+    margin-top:12px;
+    font-size:1.6rem;
+    font-weight:700;
+  }
+  .strip .copy p{
+    margin-top:14px;
+    color:var(--ink-1);
+    line-height:1.7;
+    font-size:0.98rem;
+  }
+  .stats{
+    display:flex;
+    gap:36px;
+  }
+  .stat{ text-align:left; }
+  .stat .n{
+    font-family:'Poppins', sans-serif;
+    font-size:2.1rem;
+    font-weight:700;
+    color:var(--gold-soft);
+  }
+  .stat .l{
+    margin-top:4px;
+    color:var(--ink-2);
+    font-size:0.85rem;
+  }
+
+  /* Contact / Footer */
+  footer{
+    padding:80px 0 40px;
+  }
+  .contact-box{
+    text-align:center;
+    padding:56px 32px;
+    border-radius:24px;
+    background:linear-gradient(165deg, rgba(232,184,75,0.09), rgba(232,184,75,0.02));
+    border:1px solid var(--line);
+    margin-bottom:56px;
+  }
+  .contact-box h2{
+    font-size:clamp(1.5rem, 3vw, 2.1rem);
+    font-weight:700;
+  }
+  .contact-box p{
+    margin-top:12px;
+    color:var(--ink-1);
+    font-size:1rem;
+  }
+  .contact-box .email{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:26px;
+    padding:14px 28px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.1);
+    font-weight:600;
+    font-size:1.02rem;
+    color:var(--ink-0);
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .contact-box .email:hover{
+    border-color:var(--gold);
+    background:rgba(232,184,75,0.08);
+  }
+
+  .foot-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:16px;
+    color:var(--ink-2);
+    font-size:0.85rem;
+  }
+  .foot-links{ display:flex; gap:22px; }
+  .foot-links a{ color:var(--ink-2); transition:color .2s ease; }
+  .foot-links a:hover{ color:var(--gold-soft); }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <div class="brand"><span class="dot"></span> MySciò</div>
+      <nav>
+        <a href="#prodotti">Prodotti</a>
+        <a href="#contatti">Contatti</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">✨ Un unico brand, quattro prodotti digitali</div>
+      <h1>Idee digitali che <span class="accent">semplificano</span><br>il tuo lavoro quotidiano</h1>
+      <p>MySciò è la casa di software pensati per ristoranti, locali ed eventi: dalla lista d'attesa all'autocontrollo HACCP, fino alla gestione ordini e alle esperienze live.</p>
+      <div class="cta-row">
+        <a href="#prodotti" class="btn btn-primary">Scopri i prodotti</a>
+        <a href="#contatti" class="btn btn-ghost">Contattaci</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="products" id="prodotti">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">I nostri prodotti</div>
+        <h2>Quattro strumenti, un solo obiettivo</h2>
+        <p>Ogni prodotto MySciò nasce per risolvere un problema concreto, con la stessa cura per la semplicità d'uso.</p>
+      </div>
+
+      <div class="grid">
+
+        <a class="card easywait" href="https://easywait.myscio.it" target="_blank" rel="noopener">
+          <div class="icon">⏱️</div>
+          <h3>EasyWait <span class="tag">Ristorazione</span></h3>
+          <p class="desc">La lista d'attesa del ristorante, semplice e automatica: i clienti si mettono in coda e ricevono aggiornamenti via WhatsApp, senza stress per il tuo staff.</p>
+          <span class="go">Vai a easywait.myscio.it <span class="arrow">→</span></span>
+        </a>
+
+        <a class="card myscioapp" href="https://my.myscio.it" target="_blank" rel="noopener">
+          <div class="icon">🍽️</div>
+          <h3>MySciòApp <span class="tag">Gestionale</span></h3>
+          <p class="desc">Il gestionale menu e ordini pensato per il tuo locale: digitalizza la sala, velocizza il servizio e tieni tutto sotto controllo da un'unica app.</p>
+          <span class="go">Vai a my.myscio.it <span class="arrow">→</span></span>
+        </a>
+
+        <a class="card haccpplay" href="https://haccpplay.myscio.it" target="_blank" rel="noopener">
+          <div class="icon">✅</div>
+          <h3>HACCPPLAY <span class="tag">Sicurezza alimentare</span></h3>
+          <p class="desc">Autocontrollo HACCP senza pensieri: temperature, checklist con firma, ricevimento merci ed etichette, tutto in un'unica app da usare ogni giorno.</p>
+          <span class="go">Vai a haccpplay.myscio.it <span class="arrow">→</span></span>
+        </a>
+
+        <a class="card mymood" href="https://mymood.myscio.it" target="_blank" rel="noopener">
+          <div class="icon">🎧</div>
+          <h3>MyMood <span class="tag">Eventi &amp; Live</span></h3>
+          <p class="desc">Vivi il mood, segui il beat: il profilo digitale per DJ e artisti live, con date, contatti e presenza online in un unico posto.</p>
+          <span class="go">Vai a mymood.myscio.it <span class="arrow">→</span></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="wrap">
+      <div class="copy">
+        <div class="kicker">Chi siamo</div>
+        <h3>Software su misura, pensato per chi lavora sul campo</h3>
+        <p>Dietro ogni prodotto MySciò c'è lo stesso approccio: capire davvero un problema quotidiano — la fila all'ingresso, il controllo delle temperature, la comanda al tavolo — e costruire lo strumento più semplice possibile per risolverlo.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="n">4</div><div class="l">Prodotti attivi</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">Pensati in Italia</div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contatti">
+    <div class="wrap">
+      <div class="contact-box">
+        <h2>Hai un progetto o una domanda?</h2>
+        <p>Scrivici, ti rispondiamo volentieri.</p>
+        <a class="email" href="mailto:info@myscio.it">✉️ info@myscio.it</a>
+      </div>
+      <div class="foot-bottom">
+        <div>© <span id="year"></span> MySciò — Tutti i diritti riservati</div>
+        <div class="foot-links">
+          <a href="https://easywait.myscio.it" target="_blank" rel="noopener">EasyWait</a>
+          <a href="https://my.myscio.it" target="_blank" rel="noopener">MySciòApp</a>
+          <a href="https://haccpplay.myscio.it" target="_blank" rel="noopener">HACCPPLAY</a>
+          <a href="https://mymood.myscio.it" target="_blank" rel="noopener">MyMood</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
