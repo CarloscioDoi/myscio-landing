@@ -189,96 +189,160 @@
     line-height:1.6;
   }
 
-  .products{
+  .showcase{
     padding:20px 0 60px;
   }
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
+  .showcase-list{
+    display:flex;
+    flex-direction:column;
     gap:22px;
   }
-  @media (max-width:760px){
-    .grid{ grid-template-columns:1fr; }
-  }
 
-  .card{
+  .showcase-item{
     --accent: var(--gold);
     position:relative;
-    padding:32px 30px 30px;
-    border-radius:20px;
+    padding:38px 40px;
+    border-radius:24px;
     background:linear-gradient(165deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
     border:1px solid rgba(255,255,255,0.07);
     overflow:hidden;
-    transition:transform .25s ease, border-color .25s ease, background .25s ease;
+    transition:border-color .25s ease;
   }
-  .card::before{
+  .showcase-item::before{
     content:"";
     position:absolute;
     inset:0;
-    background:radial-gradient(420px 180px at 0% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 60%);
-    opacity:0.7;
+    background:radial-gradient(520px 220px at 0% 0%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%);
+    opacity:0.85;
     pointer-events:none;
   }
-  .card:hover{
-    transform:translateY(-5px);
-    border-color:color-mix(in srgb, var(--accent) 45%, rgba(255,255,255,0.1));
+  .showcase-item:hover{
+    border-color:color-mix(in srgb, var(--accent) 40%, rgba(255,255,255,0.1));
   }
-  .card .icon{
-    width:52px; height:52px;
-    border-radius:14px;
-    display:flex; align-items:center; justify-content:center;
-    font-size:1.5rem;
-    background:color-mix(in srgb, var(--accent) 18%, transparent);
-    border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
-    margin-bottom:20px;
+  .showcase-item .top{
     position:relative;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
   }
-  .card h3{
-    font-size:1.32rem;
-    font-weight:700;
-    color:var(--ink-0);
+  .showcase-item .head{
     display:flex;
     align-items:center;
-    gap:10px;
-    position:relative;
+    gap:18px;
   }
-  .card .tag{
-    font-size:0.68rem;
+  .showcase-item .icon{
+    width:60px; height:60px; flex:none;
+    border-radius:16px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:1.7rem;
+    background:color-mix(in srgb, var(--accent) 18%, transparent);
+    border:1px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    overflow:hidden;
+  }
+  .showcase-item .icon img{
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .showcase-item h3{
+    font-size:1.4rem;
+    font-weight:700;
+    color:var(--ink-0);
+  }
+  .showcase-item .tagline{
+    margin-top:4px;
+    font-size:0.92rem;
     font-weight:600;
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-    color:color-mix(in srgb, var(--accent) 75%, white 10%);
-    background:color-mix(in srgb, var(--accent) 16%, transparent);
-    border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);
-    padding:3px 9px;
-    border-radius:999px;
+    color:color-mix(in srgb, var(--accent) 80%, white 15%);
   }
-  .card p.desc{
-    margin-top:12px;
-    color:var(--ink-1);
-    font-size:0.95rem;
-    line-height:1.6;
+  .price-badge{
     position:relative;
-    min-height:66px;
+    flex:none;
+    text-align:right;
+    padding:10px 18px;
+    border-radius:14px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.1);
   }
-  .card .go{
+  .price-badge .amount{
+    font-family:'Poppins', sans-serif;
+    font-size:1.25rem;
+    font-weight:700;
+    color:var(--ink-0);
+  }
+  .price-badge.custom .amount{ font-size:0.98rem; }
+  .price-badge .unit{
+    font-size:0.78rem;
+    color:var(--ink-2);
+    font-weight:500;
+  }
+  .price-badge .note{
+    margin-top:3px;
+    font-size:0.72rem;
+    color:var(--ink-2);
+  }
+  .showcase-item .desc{
+    position:relative;
     margin-top:20px;
+    max-width:640px;
+    color:var(--ink-1);
+    font-size:0.98rem;
+    line-height:1.7;
+  }
+  .features{
+    position:relative;
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:20px 0 0;
+    padding:0;
+  }
+  .features li{
+    list-style:none;
     display:inline-flex;
     align-items:center;
     gap:7px;
+    padding:7px 14px;
+    border-radius:999px;
+    background:color-mix(in srgb, var(--accent) 12%, transparent);
+    border:1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    font-size:0.83rem;
+    color:var(--ink-1);
+  }
+  .features li::before{
+    content:"✓";
+    color:color-mix(in srgb, var(--accent) 80%, white 15%);
+    font-weight:700;
+  }
+  .showcase-item .go-cta{
+    position:relative;
+    margin-top:26px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 24px;
+    border-radius:12px;
     font-weight:600;
     font-size:0.9rem;
-    color:color-mix(in srgb, var(--accent) 80%, white 15%);
-    position:relative;
+    background:color-mix(in srgb, var(--accent) 85%, white 8%);
+    color:#0a0e1a;
+    transition:transform .18s ease, box-shadow .18s ease;
   }
-  .card .go .arrow{ transition:transform .2s ease; }
-  .card:hover .go .arrow{ transform:translateX(4px); }
+  .showcase-item .go-cta:hover{ transform:translateY(-2px); }
+  .showcase-item .go-cta .arrow{ transition:transform .2s ease; }
+  .showcase-item .go-cta:hover .arrow{ transform:translateX(4px); }
 
-  .card.easywait{ --accent: var(--easywait); }
-  .card.myscioapp{ --accent: var(--myscioapp); }
-  .card.haccpplay{ --accent: var(--haccpplay); }
-  .card.mymood{ --accent: var(--mymood); }
-  .card.globish{ --accent: var(--globish); }
+  .showcase-item.easywait{ --accent: var(--easywait); }
+  .showcase-item.myscioapp{ --accent: var(--myscioapp); }
+  .showcase-item.haccpplay{ --accent: var(--haccpplay); }
+  .showcase-item.mymood{ --accent: var(--mymood); }
+  .showcase-item.globish{ --accent: var(--globish); }
+
+  @media (max-width:640px){
+    .showcase-item{ padding:28px 22px; }
+    .price-badge{ text-align:left; }
+  }
 
   /* Case study (third-party work) */
   .case-studies{
@@ -498,50 +562,133 @@
     </div>
   </section>
 
-  <section class="products" id="prodotti">
+  <section class="showcase" id="prodotti">
     <div class="wrap">
       <div class="section-head">
         <div class="kicker">I nostri prodotti</div>
         <h2>Cinque strumenti, un solo obiettivo</h2>
-        <p>Ogni prodotto MySciò nasce per risolvere un problema concreto, con la stessa cura per la semplicità d'uso.</p>
+        <p>Scopri cosa fa ogni prodotto MySciò e quanto costa: nessuna sorpresa, prezzi chiari fin da subito.</p>
       </div>
 
-      <div class="grid">
+      <div class="showcase-list">
 
-        <a class="card easywait" href="https://easywait.myscio.it" target="_blank" rel="noopener">
-          <div class="icon">⏱️</div>
-          <h3>EasyWait <span class="tag">Ristorazione</span></h3>
-          <p class="desc">La lista d'attesa del ristorante, semplice e automatica: i clienti si mettono in coda e ricevono aggiornamenti via WhatsApp, senza stress per il tuo staff.</p>
-          <span class="go">Vai a easywait.myscio.it <span class="arrow">→</span></span>
-        </a>
+        <div class="showcase-item easywait">
+          <div class="top">
+            <div class="head">
+              <div class="icon"><img src="/assets/icons/easywait.png" alt="Icona EasyWait" /></div>
+              <div>
+                <h3>EasyWait</h3>
+                <div class="tagline">La tua attesa, senza stress</div>
+              </div>
+            </div>
+            <div class="price-badge">
+              <div class="amount">9,99€<span class="unit">/mese</span></div>
+              <div class="note">14 giorni di prova gratuita</div>
+            </div>
+          </div>
+          <p class="desc">La lista d'attesa del ristorante, semplice e automatica: i clienti si mettono in coda dal proprio telefono e ricevono aggiornamenti in tempo reale via WhatsApp, mentre il tuo staff resta libero di occuparsi della sala.</p>
+          <ul class="features">
+            <li>Iscrizione in pochi secondi</li>
+            <li>Notifiche automatiche via WhatsApp</li>
+            <li>Posizione in coda in tempo reale</li>
+            <li>Zero carta, zero codini disordinati</li>
+          </ul>
+          <a class="go-cta" href="https://easywait.myscio.it" target="_blank" rel="noopener">Prova EasyWait gratis <span class="arrow">→</span></a>
+        </div>
 
-        <a class="card myscioapp" href="https://my.myscio.it" target="_blank" rel="noopener">
-          <div class="icon">🍽️</div>
-          <h3>MySciòApp <span class="tag">Gestionale</span></h3>
-          <p class="desc">Il gestionale menu e ordini pensato per il tuo locale: digitalizza la sala, velocizza il servizio e tieni tutto sotto controllo da un'unica app.</p>
-          <span class="go">Vai a my.myscio.it <span class="arrow">→</span></span>
-        </a>
+        <div class="showcase-item myscioapp">
+          <div class="top">
+            <div class="head">
+              <div class="icon"><img src="/assets/icons/myscioapp.png" alt="Icona MySciòApp" /></div>
+              <div>
+                <h3>MySciòApp</h3>
+                <div class="tagline">Il gestionale che digitalizza la sala</div>
+              </div>
+            </div>
+            <div class="price-badge custom">
+              <div class="amount">Su richiesta</div>
+              <div class="note">Prezzo su misura per il tuo locale</div>
+            </div>
+          </div>
+          <p class="desc">Menu digitale, comande e ordini in un'unica app: il tuo locale prende le comande più velocemente, le manda dritte in cucina e tiene tutto sotto controllo, dal tavolo al conto.</p>
+          <ul class="features">
+            <li>Menu digitale sempre aggiornato</li>
+            <li>Comande dirette in cucina</li>
+            <li>Gestione ordini in tempo reale</li>
+            <li>Pensato per il servizio al tavolo</li>
+          </ul>
+          <a class="go-cta" href="https://my.myscio.it" target="_blank" rel="noopener">Richiedi informazioni <span class="arrow">→</span></a>
+        </div>
 
-        <a class="card haccpplay" href="https://haccpplay.myscio.it" target="_blank" rel="noopener">
-          <div class="icon">✅</div>
-          <h3>HACCPPLAY <span class="tag">Sicurezza alimentare</span></h3>
-          <p class="desc">Autocontrollo HACCP senza pensieri: temperature, checklist con firma, ricevimento merci ed etichette, tutto in un'unica app da usare ogni giorno.</p>
-          <span class="go">Vai a haccpplay.myscio.it <span class="arrow">→</span></span>
-        </a>
+        <div class="showcase-item haccpplay">
+          <div class="top">
+            <div class="head">
+              <div class="icon"><img src="/assets/icons/haccpplay.png" alt="Icona HACCPPLAY" /></div>
+              <div>
+                <h3>HACCPPLAY</h3>
+                <div class="tagline">Autocontrollo HACCP senza pensieri</div>
+              </div>
+            </div>
+            <div class="price-badge">
+              <div class="amount">9,90€<span class="unit">/mese</span></div>
+            </div>
+          </div>
+          <p class="desc">Temperature, checklist con firma, ricevimento merci ed etichette: tutti i registri di autocontrollo alimentare in un'unica app da usare ogni giorno, sempre pronta per un controllo.</p>
+          <ul class="features">
+            <li>Checklist con firma digitale</li>
+            <li>Registro temperature</li>
+            <li>Ricevimento merci</li>
+            <li>Etichette e non conformità</li>
+          </ul>
+          <a class="go-cta" href="https://haccpplay.myscio.it" target="_blank" rel="noopener">Scopri HACCPPLAY <span class="arrow">→</span></a>
+        </div>
 
-        <a class="card mymood" href="https://mymood.myscio.it" target="_blank" rel="noopener">
-          <div class="icon">🎧</div>
-          <h3>MyMood <span class="tag">Eventi &amp; Live</span></h3>
-          <p class="desc">Vivi il mood, segui il beat: il profilo digitale per locali, dj e artisti live, con date, contatti e presenza online in un unico posto.</p>
-          <span class="go">Vai a mymood.myscio.it <span class="arrow">→</span></span>
-        </a>
+        <div class="showcase-item mymood">
+          <div class="top">
+            <div class="head">
+              <div class="icon"><img src="/assets/icons/mymood.png" alt="Icona MyMood" /></div>
+              <div>
+                <h3>MyMood</h3>
+                <div class="tagline">Vivi il mood, segui il beat</div>
+              </div>
+            </div>
+            <div class="price-badge custom">
+              <div class="amount">Su richiesta</div>
+              <div class="note">Prezzo su misura per te</div>
+            </div>
+          </div>
+          <p class="desc">Il profilo digitale per locali, dj e artisti live: date, contatti e presenza online sempre aggiornati, in un unico posto facile da condividere e da tenere sotto controllo.</p>
+          <ul class="features">
+            <li>Profilo pubblico personalizzabile</li>
+            <li>Calendario date ed eventi</li>
+            <li>Contatti e social in un click</li>
+            <li>Pensato per il mondo della musica live</li>
+          </ul>
+          <a class="go-cta" href="https://mymood.myscio.it" target="_blank" rel="noopener">Richiedi informazioni <span class="arrow">→</span></a>
+        </div>
 
-        <a class="card globish" href="https://globishessenziale.myscio.it" target="_blank" rel="noopener">
-          <div class="icon">🌍</div>
-          <h3>Globish Essenziale <span class="tag">Formazione</span></h3>
-          <p class="desc">Il metodo delle parole essenziali per parlare davvero: inglese, francese, spagnolo, russo e cinese in un'unica app, con chat vocale, pronuncia guidata e progressi tracciati.</p>
-          <span class="go">Vai a globishessenziale.myscio.it <span class="arrow">→</span></span>
-        </a>
+        <div class="showcase-item globish">
+          <div class="top">
+            <div class="head">
+              <div class="icon"><img src="/assets/icons/globish.png" alt="Icona Globish Essenziale" /></div>
+              <div>
+                <h3>Globish Essenziale</h3>
+                <div class="tagline">Il metodo semplice per parlare davvero</div>
+              </div>
+            </div>
+            <div class="price-badge">
+              <div class="amount">4,99€<span class="unit">/mese</span></div>
+            </div>
+          </div>
+          <p class="desc">Le parole essenziali per farsi capire, in cinque lingue: inglese, francese, spagnolo, russo e cinese. Chat vocale, pronuncia guidata e progressi sempre tracciati, tutto in un'unica app.</p>
+          <ul class="features">
+            <li>5 lingue in un'unica app</li>
+            <li>Chat vocale interattiva</li>
+            <li>Pronuncia guidata</li>
+            <li>Progressi sempre tracciati</li>
+          </ul>
+          <a class="go-cta" href="https://globishessenziale.myscio.it" target="_blank" rel="noopener">Scopri Globish Essenziale <span class="arrow">→</span></a>
+        </div>
 
       </div>
     </div>
