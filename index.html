@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>MySciò — Prodotti digitali per la ristorazione e oltre</title>
-<meta name="description" content="MySciò è la casa di EasyWait, MySciòApp, HACCPPLAY, MyMood, Globish Essenziale e Rent&Book: prodotti digitali pensati per semplificare la vita di ristoranti, locali, eventi, noleggi e apprendimento delle lingue." />
+<meta name="description" content="MySciò è la casa di EasyWait, MySciòApp, HACCPPLAY, MyMood, Globish Essenziale, Rent&Book e MyShift: prodotti digitali pensati per semplificare la vita di ristoranti, locali, eventi, noleggi, turni del personale e apprendimento delle lingue." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +28,7 @@
     --globish:#2fb6a3;
     --parkingvietri:#2f9e8f;
     --rentbook:#1b7ea6;
+    --myshift:#2f6fe0;
   }
 
   *{box-sizing:border-box;}
@@ -94,6 +95,27 @@
     padding:96px 0 100px;
     text-align:center;
     position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:-20%;
+    background:
+      radial-gradient(700px 420px at 20% 20%, rgba(232,184,75,0.16), transparent 60%),
+      radial-gradient(620px 380px at 82% 15%, rgba(61,139,216,0.14), transparent 60%),
+      radial-gradient(560px 360px at 50% 90%, rgba(47,182,163,0.10), transparent 60%);
+    animation:auroraDrift 22s ease-in-out infinite alternate;
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero .wrap{ position:relative; z-index:1; }
+  @keyframes auroraDrift{
+    0%{ transform:translate3d(0,0,0) scale(1); }
+    100%{ transform:translate3d(-3%,2%,0) scale(1.06); }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .hero::before{ animation:none; }
   }
   .eyebrow{
     display:inline-flex;
@@ -162,6 +184,99 @@
   }
   .btn-ghost:hover{ border-color:rgba(255,255,255,0.3); color:var(--ink-0); }
 
+  /* Ecosystem */
+  .ecosystem{
+    padding:10px 0 70px;
+    position:relative;
+  }
+  .ecosystem .section-head{ margin-bottom:56px; }
+  .ecosystem-orbit{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0;
+    max-width:920px;
+    margin:0 auto;
+    padding:30px 10px;
+  }
+  .ecosystem-orbit::before{
+    content:"";
+    position:absolute;
+    left:6%; right:6%; top:50%;
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(232,184,75,0.35) 12%, rgba(232,184,75,0.35) 88%, transparent);
+    z-index:0;
+  }
+  .orbit-node{
+    position:relative;
+    z-index:1;
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    animation:orbitFloat 5s ease-in-out infinite;
+  }
+  .orbit-node:nth-child(odd){ transform:translateY(-10px); animation-delay:.2s; }
+  .orbit-node:nth-child(3n){ animation-delay:.9s; }
+  .orbit-node:nth-child(4n){ animation-delay:1.6s; }
+  @keyframes orbitFloat{
+    0%,100%{ margin-top:0; }
+    50%{ margin-top:-8px; }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .orbit-node{ animation:none; }
+  }
+  .orbit-node .bubble{
+    width:56px; height:56px;
+    border-radius:16px;
+    overflow:hidden;
+    background:var(--bg-1);
+    border:1px solid var(--line);
+    box-shadow:0 10px 24px -10px rgba(0,0,0,0.5);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .orbit-node .bubble img{ width:100%; height:100%; object-fit:cover; }
+  .orbit-node:hover .bubble{
+    transform:translateY(-4px) scale(1.08);
+    box-shadow:0 16px 30px -10px rgba(232,184,75,0.4);
+  }
+  .orbit-node .label{
+    font-size:0.72rem;
+    font-weight:600;
+    color:var(--ink-2);
+    text-align:center;
+    white-space:nowrap;
+  }
+  .orbit-node.center .bubble{
+    width:68px; height:68px;
+    background:linear-gradient(135deg, var(--gold-soft), var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Poppins', sans-serif;
+    font-weight:800;
+    font-size:1.3rem;
+    color:#241a04;
+    border:none;
+  }
+  .orbit-node.center .label{ color:var(--gold-soft); font-weight:700; }
+  @media (max-width:820px){
+    .ecosystem-orbit{ flex-wrap:wrap; gap:24px 6px; }
+    .ecosystem-orbit::before{ display:none; }
+    .orbit-node{ flex:0 0 22%; transform:none !important; }
+  }
+  @media (max-width:480px){
+    .orbit-node{ flex:0 0 30%; }
+  }
+
+  /* Scroll reveal */
+  .reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+
   /* Products */
   .section-head{
     text-align:center;
@@ -207,7 +322,7 @@
     background:linear-gradient(165deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
     border:1px solid rgba(255,255,255,0.07);
     overflow:hidden;
-    transition:border-color .25s ease;
+    transition:border-color .3s ease, transform .3s ease, box-shadow .3s ease;
   }
   .showcase-item::before{
     content:"";
@@ -219,6 +334,8 @@
   }
   .showcase-item:hover{
     border-color:color-mix(in srgb, var(--accent) 40%, rgba(255,255,255,0.1));
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px -20px color-mix(in srgb, var(--accent) 35%, black);
   }
   .showcase-item .top{
     position:relative;
@@ -340,6 +457,31 @@
   .showcase-item.mymood{ --accent: var(--mymood); }
   .showcase-item.globish{ --accent: var(--globish); }
   .showcase-item.rentbook{ --accent: var(--rentbook); }
+  .showcase-item.myshift{ --accent: var(--myshift); }
+
+  .group-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin:0 0 22px;
+  }
+  .group-head h3{
+    font-size:1.15rem;
+    font-weight:700;
+    color:var(--ink-0);
+    white-space:nowrap;
+  }
+  .group-head .line{
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg, var(--line), transparent);
+  }
+  .group-head .count{
+    font-size:0.78rem;
+    color:var(--ink-2);
+    white-space:nowrap;
+  }
+  .product-group + .product-group{ margin-top:48px; }
 
   @media (max-width:640px){
     .showcase-item{ padding:28px 22px; }
@@ -554,9 +696,9 @@
 
   <section class="hero">
     <div class="wrap">
-      <div class="eyebrow">✨ Un unico brand, sei prodotti digitali</div>
+      <div class="eyebrow">✨ Un unico brand, sette prodotti digitali</div>
       <h1>Idee digitali che <span class="accent">semplificano</span><br>il tuo lavoro quotidiano</h1>
-      <p>MySciò è la casa di software pensati per ristoranti, locali ed eventi, e non solo: dalla lista d'attesa all'autocontrollo HACCP, fino alla gestione ordini, alle esperienze live e all'apprendimento delle lingue.</p>
+      <p>MySciò è la casa di software pensati per ristoranti, locali ed eventi, e non solo: dalla lista d'attesa all'autocontrollo HACCP, dai turni del personale alla gestione ordini, fino alle prenotazioni, alle esperienze live e all'apprendimento delle lingue.</p>
       <div class="cta-row">
         <a href="#prodotti" class="btn btn-primary">Scopri i prodotti</a>
         <a href="#contatti" class="btn btn-ghost">Contattaci</a>
@@ -564,17 +706,43 @@
     </div>
   </section>
 
+  <section class="ecosystem">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="kicker">Un ecosistema, non prodotti isolati</div>
+        <h2>Nati separati, pensati per lavorare insieme</h2>
+        <p>Ogni prodotto MySciò risolve un problema preciso da solo, ma condivide lo stesso marchio, la stessa cura e — quando serve — gli stessi dati: un ristorante può usare EasyWait, HACCPPLAY e MyShift insieme, senza cuciture.</p>
+      </div>
+      <div class="ecosystem-orbit reveal">
+        <div class="orbit-node"><div class="bubble"><img src="/assets/icons/easywait.png" alt="EasyWait" /></div><div class="label">EasyWait</div></div>
+        <div class="orbit-node"><div class="bubble"><img src="/assets/icons/haccpplay.png" alt="HACCPPLAY" /></div><div class="label">HACCPPLAY</div></div>
+        <div class="orbit-node"><div class="bubble"><img src="/assets/icons/myshift.png" alt="MyShift" /></div><div class="label">MyShift</div></div>
+        <div class="orbit-node center"><div class="bubble">M</div><div class="label">MySciò</div></div>
+        <div class="orbit-node"><div class="bubble"><img src="/assets/icons/globish.png" alt="Globish Essenziale" /></div><div class="label">Globish</div></div>
+        <div class="orbit-node"><div class="bubble"><img src="/assets/icons/myscioapp.png" alt="MySciòApp" /></div><div class="label">MySciòApp</div></div>
+        <div class="orbit-node"><div class="bubble"><img src="/assets/icons/mymood.png" alt="MyMood" /></div><div class="label">MyMood</div></div>
+        <div class="orbit-node"><div class="bubble"><img src="/assets/icons/rentbook.png" alt="Rent&amp;Book" /></div><div class="label">Rent&amp;Book</div></div>
+      </div>
+    </div>
+  </section>
+
   <section class="showcase" id="prodotti">
     <div class="wrap">
-      <div class="section-head">
+      <div class="section-head reveal">
         <div class="kicker">I nostri prodotti</div>
-        <h2>Sei strumenti, un solo obiettivo</h2>
+        <h2>Sette strumenti, un solo obiettivo</h2>
         <p>Scopri cosa fa ogni prodotto MySciò e quanto costa: nessuna sorpresa, prezzi chiari fin da subito.</p>
       </div>
 
-      <div class="showcase-list">
+      <div class="product-group">
+        <div class="group-head reveal">
+          <h3>🚀 Pronti all'uso</h3>
+          <span class="line"></span>
+          <span class="count">Ti abboni oggi, li usi da subito</span>
+        </div>
+        <div class="showcase-list">
 
-        <div class="showcase-item easywait">
+        <div class="showcase-item easywait reveal">
           <div class="top">
             <div class="head">
               <div class="icon"><img src="/assets/icons/easywait.png" alt="Icona EasyWait" /></div>
@@ -598,7 +766,87 @@
           <a class="go-cta" href="https://easywait.myscio.it" target="_blank" rel="noopener">Prova EasyWait gratis <span class="arrow">→</span></a>
         </div>
 
-        <div class="showcase-item myscioapp">
+        <div class="showcase-item haccpplay reveal">
+          <div class="top">
+            <div class="head">
+              <div class="icon"><img src="/assets/icons/haccpplay.png" alt="Icona HACCPPLAY" /></div>
+              <div>
+                <h3>HACCPPLAY</h3>
+                <div class="tagline">Autocontrollo HACCP senza pensieri</div>
+              </div>
+            </div>
+            <div class="price-badge">
+              <div class="amount">9,99€<span class="unit">/mese</span></div>
+            </div>
+          </div>
+          <p class="desc">Temperature, checklist con firma, ricevimento merci ed etichette: tutti i registri di autocontrollo alimentare in un'unica app da usare ogni giorno, sempre pronta per un controllo.</p>
+          <ul class="features">
+            <li>Checklist con firma digitale</li>
+            <li>Registro temperature</li>
+            <li>Ricevimento merci</li>
+            <li>Etichette e non conformità</li>
+          </ul>
+          <a class="go-cta" href="https://haccpplay.myscio.it" target="_blank" rel="noopener">Scopri HACCPPLAY <span class="arrow">→</span></a>
+        </div>
+
+        <div class="showcase-item globish reveal">
+          <div class="top">
+            <div class="head">
+              <div class="icon"><img src="/assets/icons/globish.png" alt="Icona Globish Essenziale" /></div>
+              <div>
+                <h3>Globish Essenziale</h3>
+                <div class="tagline">Il metodo semplice per parlare davvero</div>
+              </div>
+            </div>
+            <div class="price-badge">
+              <div class="amount">4,99€<span class="unit">/mese</span></div>
+            </div>
+          </div>
+          <p class="desc">Le parole essenziali per farsi capire, in cinque lingue: inglese, francese, spagnolo, russo e cinese. Chat vocale, pronuncia guidata e progressi sempre tracciati, tutto in un'unica app.</p>
+          <ul class="features">
+            <li>5 lingue in un'unica app</li>
+            <li>Chat vocale interattiva</li>
+            <li>Pronuncia guidata</li>
+            <li>Progressi sempre tracciati</li>
+          </ul>
+          <a class="go-cta" href="https://globishessenziale.myscio.it" target="_blank" rel="noopener">Scopri Globish Essenziale <span class="arrow">→</span></a>
+        </div>
+
+        <div class="showcase-item myshift reveal">
+          <div class="top">
+            <div class="head">
+              <div class="icon"><img src="/assets/icons/myshift.png" alt="Icona MyShift" /></div>
+              <div>
+                <h3>MyShift</h3>
+                <div class="tagline">Il personale giusto, nel momento giusto</div>
+              </div>
+            </div>
+            <div class="price-badge">
+              <div class="amount">19,99€<span class="unit">/mese</span></div>
+            </div>
+          </div>
+          <p class="desc">Turni, presenze e costi del personale in un'unica app: dici quante persone ti servono per ruolo e MyShift prepara da solo i turni della settimana, rispettando disponibilità, contratti e costi. Poi confronta cosa avevi programmato con cosa è successo davvero.</p>
+          <ul class="features">
+            <li>Turni generati automaticamente dall'AI Planner</li>
+            <li>Timbratura con QR dinamico</li>
+            <li>Sostituzioni suggerite in automatico</li>
+            <li>Report ore ed export a fine mese</li>
+          </ul>
+          <a class="go-cta" href="https://myshift.myscio.it" target="_blank" rel="noopener">Scopri MyShift <span class="arrow">→</span></a>
+        </div>
+
+        </div>
+      </div>
+
+      <div class="product-group">
+        <div class="group-head reveal">
+          <h3>🛠️ Su misura</h3>
+          <span class="line"></span>
+          <span class="count">Lo costruiamo insieme a te</span>
+        </div>
+        <div class="showcase-list">
+
+        <div class="showcase-item myscioapp reveal">
           <div class="top">
             <div class="head">
               <div class="icon"><img src="/assets/icons/myscioapp.png" alt="Icona MySciòApp" /></div>
@@ -622,30 +870,7 @@
           <a class="go-cta" href="https://my.myscio.it" target="_blank" rel="noopener">Richiedi informazioni <span class="arrow">→</span></a>
         </div>
 
-        <div class="showcase-item haccpplay">
-          <div class="top">
-            <div class="head">
-              <div class="icon"><img src="/assets/icons/haccpplay.png" alt="Icona HACCPPLAY" /></div>
-              <div>
-                <h3>HACCPPLAY</h3>
-                <div class="tagline">Autocontrollo HACCP senza pensieri</div>
-              </div>
-            </div>
-            <div class="price-badge">
-              <div class="amount">9,99€<span class="unit">/mese</span></div>
-            </div>
-          </div>
-          <p class="desc">Temperature, checklist con firma, ricevimento merci ed etichette: tutti i registri di autocontrollo alimentare in un'unica app da usare ogni giorno, sempre pronta per un controllo.</p>
-          <ul class="features">
-            <li>Checklist con firma digitale</li>
-            <li>Registro temperature</li>
-            <li>Ricevimento merci</li>
-            <li>Etichette e non conformità</li>
-          </ul>
-          <a class="go-cta" href="https://haccpplay.myscio.it" target="_blank" rel="noopener">Scopri HACCPPLAY <span class="arrow">→</span></a>
-        </div>
-
-        <div class="showcase-item mymood">
+        <div class="showcase-item mymood reveal">
           <div class="top">
             <div class="head">
               <div class="icon"><img src="/assets/icons/mymood.png" alt="Icona MyMood" /></div>
@@ -669,30 +894,7 @@
           <a class="go-cta" href="https://mymood.myscio.it" target="_blank" rel="noopener">Richiedi informazioni <span class="arrow">→</span></a>
         </div>
 
-        <div class="showcase-item globish">
-          <div class="top">
-            <div class="head">
-              <div class="icon"><img src="/assets/icons/globish.png" alt="Icona Globish Essenziale" /></div>
-              <div>
-                <h3>Globish Essenziale</h3>
-                <div class="tagline">Il metodo semplice per parlare davvero</div>
-              </div>
-            </div>
-            <div class="price-badge">
-              <div class="amount">4,99€<span class="unit">/mese</span></div>
-            </div>
-          </div>
-          <p class="desc">Le parole essenziali per farsi capire, in cinque lingue: inglese, francese, spagnolo, russo e cinese. Chat vocale, pronuncia guidata e progressi sempre tracciati, tutto in un'unica app.</p>
-          <ul class="features">
-            <li>5 lingue in un'unica app</li>
-            <li>Chat vocale interattiva</li>
-            <li>Pronuncia guidata</li>
-            <li>Progressi sempre tracciati</li>
-          </ul>
-          <a class="go-cta" href="https://globishessenziale.myscio.it" target="_blank" rel="noopener">Scopri Globish Essenziale <span class="arrow">→</span></a>
-        </div>
-
-        <div class="showcase-item rentbook">
+        <div class="showcase-item rentbook reveal">
           <div class="top">
             <div class="head">
               <div class="icon"><img src="/assets/icons/rentbook.png" alt="Icona Rent&Book" /></div>
@@ -716,6 +918,7 @@
           <a class="go-cta" href="https://rentbook.myscio.it" target="_blank" rel="noopener">Prova la demo di Rent&amp;Book <span class="arrow">→</span></a>
         </div>
 
+        </div>
       </div>
     </div>
   </section>
@@ -728,7 +931,7 @@
         <p>Dietro ogni prodotto MySciò c'è lo stesso approccio: capire davvero un problema quotidiano — la fila all'ingresso, il controllo delle temperature, la comanda al tavolo — e costruire lo strumento più semplice possibile per risolverlo.</p>
       </div>
       <div class="stats">
-        <div class="stat"><div class="n">6</div><div class="l">Prodotti attivi</div></div>
+        <div class="stat"><div class="n">7</div><div class="l">Prodotti attivi</div></div>
         <div class="stat"><div class="n">100%</div><div class="l">Pensati in Italia</div></div>
       </div>
     </div>
@@ -750,6 +953,7 @@
           <a href="https://mymood.myscio.it" target="_blank" rel="noopener">MyMood</a>
           <a href="https://globishessenziale.myscio.it" target="_blank" rel="noopener">Globish Essenziale</a>
           <a href="https://rentbook.myscio.it" target="_blank" rel="noopener">Rent&amp;Book</a>
+          <a href="https://myshift.myscio.it" target="_blank" rel="noopener">MyShift</a>
           <a href="/privacy.html">Privacy</a>
           <a href="/termini.html">Termini</a>
         </div>
@@ -758,5 +962,23 @@
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    (function(){
+      var els = document.querySelectorAll('.reveal');
+      if(!('IntersectionObserver' in window) || !els.length){
+        els.forEach(function(el){ el.classList.add('in-view'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold:0.12, rootMargin:'0px 0px -40px 0px' });
+      els.forEach(function(el){ io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
