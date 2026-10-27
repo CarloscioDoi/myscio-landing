@@ -450,6 +450,8 @@
   .showcase-item .go-cta:hover{ transform:translateY(-2px); }
   .showcase-item .go-cta .arrow{ transition:transform .2s ease; }
   .showcase-item .go-cta:hover .arrow{ transform:translateX(4px); }
+  .showcase-item .go-cta.is-soon{ background:transparent; color:var(--accent); border:1px dashed color-mix(in srgb, var(--accent) 60%, transparent); cursor:default; }
+  .showcase-item .go-cta.is-soon:hover{ transform:none; }
 
   .showcase-item.easywait{ --accent: var(--easywait); }
   .showcase-item.myscioapp{ --accent: var(--myscioapp); }
@@ -753,7 +755,7 @@
             </div>
             <div class="price-badge">
               <div class="amount">9,99€<span class="unit">/mese</span></div>
-              <div class="note">14 giorni di prova gratuita</div>
+              <div class="note">Disponibile a breve</div>
             </div>
           </div>
           <p class="desc">La lista d'attesa del ristorante, semplice e automatica: i clienti si mettono in coda dal proprio telefono e ricevono aggiornamenti in tempo reale via WhatsApp, mentre il tuo staff resta libero di occuparsi della sala.</p>
@@ -763,7 +765,7 @@
             <li>Posizione in coda in tempo reale</li>
             <li>Zero carta, zero codini disordinati</li>
           </ul>
-          <a class="go-cta" href="https://easywait.myscio.it" target="_blank" rel="noopener">Prova EasyWait gratis <span class="arrow">→</span></a>
+          <span class="go-cta is-soon" aria-disabled="true">In arrivo</span>
         </div>
 
         <div class="showcase-item haccpplay reveal">
@@ -948,7 +950,7 @@
       <div class="foot-bottom">
         <div>© <span id="year"></span> MySciò — Tutti i diritti riservati</div>
         <div class="foot-links">
-          <a href="https://easywait.myscio.it" target="_blank" rel="noopener">EasyWait</a>
+          <span>EasyWait <small>(in arrivo)</small></span>
           <a href="https://myapp.myscio.it" target="_blank" rel="noopener">MySciòApp</a>
           <a href="https://haccpplay.myscio.it" target="_blank" rel="noopener">HACCPPLAY</a>
           <a href="https://mymood.myscio.it" target="_blank" rel="noopener">MyMood</a>
